@@ -4,7 +4,7 @@ import { Camera } from 'expo-camera';
 
 export default function VideoScreen() {
   const [hasPermission, setHasPermission] = useState(null);
-  const [type, setType] = useState(Camera.Constants.Type.back);
+  const [type, setType] = useState(Camera.Constants.Type.front);
 
   useEffect(() => {
     (async () => {
@@ -42,6 +42,17 @@ export default function VideoScreen() {
               );
             }}>
             <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}> Flip </Text>
+          </TouchableOpacity>
+		  <TouchableOpacity
+            style={{
+              flex: 0.1,
+              alignSelf: 'flex-end',
+              alignItems: 'center',
+            }}
+            onPress={() => {
+				Camera.recordAsync()
+            }}>
+            <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}> Record </Text>
           </TouchableOpacity>
         </View>
       </Camera>
