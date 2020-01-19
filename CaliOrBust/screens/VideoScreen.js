@@ -31,6 +31,7 @@ export default function VideoScreen() {
           <TouchableOpacity
             style={{
               //flex: 0.1,
+
               alignSelf: 'flex-end',
               alignItems: 'center',
             }}
@@ -92,7 +93,8 @@ export const styles = {
     //bottom: 0
   },
   resumeButton: {
-    marginTop: 25,
+    marginTop: 75,
+    marginRight: 74,
 	marginHorizontal: 20,
     justifyContent: 'center',
     alignItems: 'center',

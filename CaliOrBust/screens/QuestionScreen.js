@@ -116,7 +116,7 @@ render() {
        * we just wanted to provide you with some helpful links.
        */}
       <Text style={styles.caliOrBustText}>Answer the following questions:</Text>
-	   <Text style={styles.caliOrBustText}>{ gen(['machine learning', 'Python', 'programming', 'web development']).g }</Text>
+	   <Text style={styles.caliOrBustText2}>{ gen(['machine learning', 'Python', 'programming', 'web development']).g }</Text>
 	   
 		
 		<TouchableOpacity style={styles.resumeButton} 
@@ -147,10 +147,19 @@ export const styles = {
 	alignItems: 'center'
   },
   caliOrBustText: {
-    marginTop: 25,
+    marginTop: 200,
     //justifyContent: 'flex-start',
     textAlign: 'center',
-	fontSize: 20
+  fontSize: 20,
+  width: 300,
+	
+  },
+  caliOrBustText2: {
+    marginTop: 100,
+    //justifyContent: 'flex-start',
+    textAlign: 'center',
+  fontSize: 20,
+  width: 300,
 	
   },
   uploadButton: {
@@ -168,7 +177,7 @@ export const styles = {
     //bottom: 0
   },
   resumeButton: {
-    marginTop: 25,
+    marginTop: 100,
     justifyContent: 'center',
     alignItems: 'center',
     width: 200,

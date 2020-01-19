@@ -68,7 +68,7 @@ export const styles = StyleSheet.create({
 
   },
   caliOrBustText: {
-    marginTop: 25,
+    marginTop: 150,
     //justifyContent: 'flex-start',
     textAlign: 'center',
 	fontSize: 20
@@ -81,15 +81,15 @@ export const styles = StyleSheet.create({
 	borderRadius: 10
   },
   nextButton: {
-	position: 'absolute',
-	marginTop: 500,
+	position: 'relative',
+	marginTop: 10,
 	//marginTop: 400,
     justifyContent: 'center',
     alignItems: 'center',
     width: 100,
     height: 50,
     borderRadius: 25,
-    backgroundColor: '#471482'
+    backgroundColor: 'turquoise'
   },
     resumeButton: {
     //flex: 0.5,

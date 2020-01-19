@@ -23,7 +23,7 @@ export default class HomeScreen extends Component {
 
     return (
       <View style={outerContainer}>
-        <Text style={caliOrBustText}>CaliOrBust</Text>
+        <Text style={caliOrBustText}>cali || bust</Text>
         <TouchableOpacity style={resumeButton} 
 		onPress={() => this._onUploadResumePress('Pressed')}>
           <Text style={{
@@ -44,10 +44,13 @@ export const styles = {
     marginTop: getStatusBarHeight() + 50
   },
   caliOrBustText: {
-    fontSize: 20,
+    marginTop: 250,
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 50,
   },
   resumeButton: {
-    marginTop: 25,
+    marginTop: 50,
     justifyContent: 'center',
     alignItems: 'center',
     width: 200,
