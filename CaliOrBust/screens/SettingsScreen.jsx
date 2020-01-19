@@ -93,7 +93,6 @@ export default class SettingsScreen extends Component {
     }
 
 
-
   render() {
     const { outerContainer, caliOrBustText, resumeButton, loaderButton } = styles;
 
