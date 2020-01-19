@@ -23,11 +23,11 @@ export default class HomeScreen extends Component {
   };
 
   submitToGoogle = async () => {
-     try {
-       this.setState({ uploading: true });
-       let { image } = this.state;
-       let body = JSON.stringify({
-         requests:[
+      try {
+        this.setState({ uploading: true });
+        let { image } = this.state;
+        let body = JSON.stringify({
+          requests:[
             {
               inputConfig: {
                 gcsSource: {
@@ -48,29 +48,28 @@ export default class HomeScreen extends Component {
               }
             }
           ]
-       });
-       let response = await fetch(
-         "https://vision.googleapis.com/v1/files:asyncBatchAnnotate",
-         {
-           headers: {
-             Accept: "application/json",
-             "Content-Type": "application/json"
-           },
-           method: "POST",
-           body: body
-         }
-       );
-       let responseJson = await response.json();
-       console.log(responseJson);
-       this.setState({
-         googleResponse: responseJson,
-         uploading: false
-       });
-     } catch (error) {
-       console.log(error);
-     }
-   };
- };
+        });
+        let response = await fetch(
+          "https://vision.googleapis.com/v1/files:asyncBatchAnnotate",
+          {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: body
+          }
+        );
+        let responseJson = await response.json();
+        console.log(responseJson);
+        this.setState({
+          googleResponse: responseJson,
+          uploading: false
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
   render() {
     const { outerContainer, caliOrBustText, resumeButton, loaderButton } = styles;
@@ -86,7 +85,7 @@ export default class HomeScreen extends Component {
         </TouchableOpacity>
       </View>
     );
-  };
+  }
 }
 
 export const styles = {
