@@ -1,6 +1,7 @@
 //import React from 'react';
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 //import styles from 'HomeScreen.jsx';
+import { Camera } from 'expo-camera';
 import { 
   View,
   Text,
@@ -14,55 +15,58 @@ import { ExpoLinksView } from '@expo/samples';
 import Constants from 'expo-constants';
 //import { Button } from 'react-native-elements';
 //import Icon from 'react-native-vector-icons/FontAwesome';
+import {VideoScreen} from './VideoScreen';
+
 
 export default class LinksScreen extends Component {
   constructor() {
     super();
     //this.state = {};
   }
-  _onNextPress = (status) => {
+  
+  _onRecordPress = (status) => {
     console.log(status);
-    this.props.navigation.navigate('QuestionScreen');
+    this.props.navigation.navigate('VideoScreen');
   }
 
-//export default function LinksScreen() {
-  render(){
+//export default function QuestionScreen() {
+render() {
   return (
-    <ScrollView style={styles.container}>
-		<Text style={styles.caliOrBustText}>Please upload your resume:</Text>
-		<TouchableOpacity style={styles.resumeButton} 
-		onPress={() => Alert.alert('Please select a .pdf')}>
-		<Text style={{
-            fontSize: 16,
-            color: '#fff',
-          }}>Attach File</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      {/**
+       * Go ahead and delete ExpoLinksView and replace it with your content;
+       * we just wanted to provide you with some helpful links.
+       */}
+      <Text style={styles.caliOrBustText}>Answer the following questions:</Text>
+	   <Text style={styles.caliOrBustText}>Why are you not successful?</Text>
+	   
 		
-		</TouchableOpacity>
-	<TouchableOpacity style={styles.resumeButton} 
-		onPress={() => this._onNextPress('Pressed')}>
+		<TouchableOpacity style={styles.resumeButton} 
+		onPress={() => this._onRecordPress('Pressed record')}>
 		<Text style={{
             fontSize: 16,
             color: '#fff',
           }}>Next</Text>
 		
 		</TouchableOpacity>
+		
+	<SafeAreaView style={styles.nextButton}>
+	   <Button
+          title="Next"
+          onPress={() => Alert.alert('Go to the nexy page')}
+        />
+	</SafeAreaView>
     </ScrollView>
 
   );
-//};
 }
 };
-
-LinksScreen.navigationOptions = {
-  title: 'Links',
-};
-
-export const styles = StyleSheet.create({
+export const styles = {
   container: {
     flex: 1,
     //paddingTop: 15,
     backgroundColor: '#fff',
-
+	alignItems: 'center'
   },
   caliOrBustText: {
     marginTop: 25,
@@ -85,7 +89,7 @@ export const styles = StyleSheet.create({
 	//position: 'absolute',
     //bottom: 0
   },
-    resumeButton: {
+  resumeButton: {
     marginTop: 25,
     justifyContent: 'center',
     alignItems: 'center',
@@ -94,4 +98,4 @@ export const styles = StyleSheet.create({
     borderRadius: 25,
     backgroundColor: 'turquoise'
   }
-}); 
+}; 
