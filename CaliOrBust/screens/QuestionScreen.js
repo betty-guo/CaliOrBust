@@ -46,13 +46,13 @@ render() {
 		<Text style={{
             fontSize: 16,
             color: '#fff',
-          }}>Next</Text>
+          }}>Answer</Text>
 		
 		</TouchableOpacity>
 		
-	<SafeAreaView style={styles.nextButton}>
+	<SafeAreaView style={{marginTop: 9999}}>
 	   <Button
-          title="Next"
+          title=""
           onPress={() => Alert.alert('Go to the nexy page')}
         />
 	</SafeAreaView>

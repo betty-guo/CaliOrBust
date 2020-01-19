@@ -12,6 +12,7 @@ import {
 import { ScrollView, StyleSheet } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 import Constants from 'expo-constants';
+import * as DocumentPicker from 'expo-document-picker';
 //import { Button } from 'react-native-elements';
 //import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -28,26 +29,27 @@ export default class LinksScreen extends Component {
 //export default function LinksScreen() {
   render(){
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
 		<Text style={styles.caliOrBustText}>Please upload your resume:</Text>
 		<TouchableOpacity style={styles.resumeButton} 
-		onPress={() => Alert.alert('Please select a .pdf')}>
+		onPress={() => DocumentPicker.getDocumentAsync(type='pdf/*', copyToCacheDirectory='true')}>
 		<Text style={{
             fontSize: 16,
-            color: '#fff',
+            color: '#000',
+			textAlign: 'center'
           }}>Attach File</Text>
 		
 		</TouchableOpacity>
-	<TouchableOpacity style={styles.resumeButton} 
+	<TouchableOpacity style={styles.nextButton} 
 		onPress={() => this._onNextPress('Pressed')}>
 		<Text style={{
             fontSize: 16,
             color: '#fff',
+			textAlign: 'center'
           }}>Next</Text>
 		
 		</TouchableOpacity>
-    </ScrollView>
-
+	</View>
   );
 //};
 }
@@ -62,6 +64,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     //paddingTop: 15,
     backgroundColor: '#fff',
+	alignItems: 'center'
 
   },
   caliOrBustText: {
@@ -75,23 +78,27 @@ export const styles = StyleSheet.create({
     flex: 1,
     marginTop: Constants.statusBarHeight,
     marginHorizontal: 45,
-	borderRadius: 25
+	borderRadius: 10
   },
   nextButton: {
-	flex: 1,
-	//alignSelf: 'flex-end',
-	alignItems: 'center',
-	marginTop: 400,
-	//position: 'absolute',
-    //bottom: 0
-  },
-    resumeButton: {
-    marginTop: 25,
+	position: 'absolute',
+	marginTop: 500,
+	//marginTop: 400,
     justifyContent: 'center',
     alignItems: 'center',
-    width: 200,
+    width: 100,
     height: 50,
     borderRadius: 25,
-    backgroundColor: 'turquoise'
+    backgroundColor: '#471482'
+  },
+    resumeButton: {
+    //flex: 0.5,
+	marginTop: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 300,
+    height: 400,
+    borderRadius: 10,
+    backgroundColor: 'lightgrey'
   }
 }); 
