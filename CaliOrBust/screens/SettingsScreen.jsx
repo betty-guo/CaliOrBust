@@ -19,7 +19,6 @@ export default class SettingsScreen extends Component {
   _onUploadResumePress = (status) => {
     console.log(status);
     this.submitToGoogle();
-    console.log(this.state.dataSource);
   };
 
   submitToGoogle = async () => {
@@ -62,15 +61,38 @@ export default class SettingsScreen extends Component {
          }
        );
        let responseJson = await response.json();
-       console.log(responseJson);
+       console.log(responseJson)
+       let arr = responseJson.name.split('/');
+       console.log(arr)
+       console.log(arr[arr.length - 1])
        this.setState({
          googleResponse: responseJson,
          uploading: false
        });
+
+       let response2 = await fetch(
+         `https://vision.googleapis.com/v1/operations/${arr[arr.length - 1]}`,
+         {
+           headers: {
+             Accept: "application/json",
+             "Authorization": "Bearer ya29.c.Kl66B-gzFyqvxP7D_jYaxLgpdh-4Hp5boL6hriGRWHvgdxK0ZSKPwo5NMxzHLfMsGqSver6z4Hk2yrzvPfje-r6PNXeqy08XVrXtWJaOShBCDtiex4BDga_SmNHX1sgd",
+             "Content-Type": "application/json"
+           },
+           method: "GET",
+         }
+       )
+       .then((res) => {
+         //console.log(res.json())
+       })
+       .catch((err) => {
+         //console.log(err)
+       })
       } catch (error) {
         console.log(error);
       }
     }
+
+
 
   render() {
     const { outerContainer, caliOrBustText, resumeButton, loaderButton } = styles;
