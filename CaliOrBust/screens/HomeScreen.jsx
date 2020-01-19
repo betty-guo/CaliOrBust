@@ -24,11 +24,12 @@ export default class HomeScreen extends Component {
     return (
       <View style={outerContainer}>
         <Text style={caliOrBustText}>CaliOrBust</Text>
-        <TouchableOpacity style={resumeButton} onPress={() => this._onUploadResumePress('Pressed')}>
+        <TouchableOpacity style={resumeButton} 
+		onPress={() => this._onUploadResumePress('Pressed')}>
           <Text style={{
             fontSize: 16,
             color: '#fff',
-          }}>Upload resume</Text>
+          }}>Get Started</Text>
         </TouchableOpacity>
       </View>
     );
