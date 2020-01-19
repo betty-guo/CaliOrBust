@@ -30,7 +30,7 @@ export default class SettingsScreen extends Component {
             {
               inputConfig: {
                 gcsSource: {
-                  uri: "gs://caliorbust/ba-ex04.pdf"
+                  uri: "gs://starter20/Lorem-Ipsum.pdf"
                 },
                 mimeType: "application/pdf"
               },
@@ -41,7 +41,7 @@ export default class SettingsScreen extends Component {
               ],
               outputConfig: {
                 gcsDestination: {
-                  uri: "gs://https://storage.cloud.google.com/caliorbust/ba-ex04.pdf"
+                  uri: "gs://storage.cloud.google.com/starter20/Lorem-Ipsum.pdf"
                 },
                 batchSize: 1
               }
@@ -53,7 +53,7 @@ export default class SettingsScreen extends Component {
          {
            headers: {
              Accept: "application/json",
-             "Authorization": "Bearer ya29.c.Kl66B8UJXFvuoORvd5WMACcSv5gvVaKnwrgkRkk65g9MlgXf9dPcqzK--xG08_p1OpvaY5Rd4Zml8ATyscdHSxvRsh_aKFj2-cySpWctD7WnHwRDvnjCKeQniUJ7s7vh",
+             "Authorization": "Bearer ya29.c.Kl66B-WogetfP5Jr9DEh7MUFPvW1AzrpR0y_YQbu8LotzAp-aiAHH7pIO3kWFhBWc8n_u7t8HE4MfF9cZxR8hDDpSwioYrLziWLXIddinNXEGi6dJm37nsgfn9P1MOhG",
              "Content-Type": "application/json"
            },
            method: "POST",
@@ -69,13 +69,15 @@ export default class SettingsScreen extends Component {
          googleResponse: responseJson,
          uploading: false
        });
-       console.log("https://vision.googleapis.com/v1/projects/" + responseJson.name);
+       console.log("https://vision.googleapis.com/v1/" + responseJson.name);
+
        let response2 = await fetch(
-         "https://vision.googleapis.com/v1/projects/thermal-talon-215015/locations/us/operations/2835c48e7be3cba4",
+         "https://vision.googleapis.com/v1/" + responseJson.name,
+        //"https://vision.googleapis.com/v1/projects/thermal-talon-215015/locations/us/operations/c75b23c12df4eb26",
          {
            headers: {
              Accept: "application/json",
-             "Authorization": "Bearer ya29.c.Kl66B8UJXFvuoORvd5WMACcSv5gvVaKnwrgkRkk65g9MlgXf9dPcqzK--xG08_p1OpvaY5Rd4Zml8ATyscdHSxvRsh_aKFj2-cySpWctD7WnHwRDvnjCKeQniUJ7s7vh",
+             "Authorization": "Bearer ya29.c.Kl66B-WogetfP5Jr9DEh7MUFPvW1AzrpR0y_YQbu8LotzAp-aiAHH7pIO3kWFhBWc8n_u7t8HE4MfF9cZxR8hDDpSwioYrLziWLXIddinNXEGi6dJm37nsgfn9P1MOhG",
              "Content-Type": "application/json"
            },
            method: "GET",
