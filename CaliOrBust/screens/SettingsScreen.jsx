@@ -14,11 +14,11 @@ export default class SettingsScreen extends Component {
       loading: true,
    dataSource:[]
     };
-  }
+  };
 
   _onUploadResumePress = (status) => {
     console.log(status);
-    submitToGoogle;
+    this.submitToGoogle();
     console.log(this.state.dataSource);
   };
 
@@ -66,11 +66,10 @@ export default class SettingsScreen extends Component {
          googleResponse: responseJson,
          uploading: false
        });
-     } catch (error) {
-       console.log(error);
-     }
-   };
- };
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
   render() {
     const { outerContainer, caliOrBustText, resumeButton, loaderButton } = styles;
@@ -86,8 +85,8 @@ export default class SettingsScreen extends Component {
         </TouchableOpacity>
       </View>
     );
-  };
-}
+  }
+};
 
 export const styles = {
   outerContainer: {
