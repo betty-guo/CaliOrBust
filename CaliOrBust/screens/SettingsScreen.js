@@ -7,7 +7,7 @@ import {
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import {LinksScreen} from './LinksScreen';
 
-export default class HomeScreen extends Component {
+export default class SettingsScreen extends Component {
   constructor() {
     super();
     this.state = {
