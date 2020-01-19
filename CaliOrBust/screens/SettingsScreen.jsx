@@ -12,7 +12,7 @@ export default class SettingsScreen extends Component {
     super();
     this.state = {
       loading: true,
-   dataSource:[]
+      dataSource: {}
     };
   };
 
@@ -30,7 +30,7 @@ export default class SettingsScreen extends Component {
             {
               inputConfig: {
                 gcsSource: {
-                  uri: "gs://caliorbust/Guo_Yuxuan.pdf"
+                  uri: "gs://caliorbust/ba-ex04.pdf"
                 },
                 mimeType: "application/pdf"
               },
@@ -41,7 +41,7 @@ export default class SettingsScreen extends Component {
               ],
               outputConfig: {
                 gcsDestination: {
-                  uri: "gs://https://storage.cloud.google.com/caliorbust/Guo_Yuxuan.pdf"
+                  uri: "gs://https://storage.cloud.google.com/caliorbust/ba-ex04.pdf"
                 },
                 batchSize: 1
               }
@@ -49,11 +49,11 @@ export default class SettingsScreen extends Component {
           ]
        });
        let response = await fetch(
-         "https://vision.googleapis.com/v1/files:asyncBatchAnnotate",
+         "https://us-vision.googleapis.com/v1/files:asyncBatchAnnotate",
          {
            headers: {
              Accept: "application/json",
-             "Authorization": "Bearer ya29.c.Kl66B-gzFyqvxP7D_jYaxLgpdh-4Hp5boL6hriGRWHvgdxK0ZSKPwo5NMxzHLfMsGqSver6z4Hk2yrzvPfje-r6PNXeqy08XVrXtWJaOShBCDtiex4BDga_SmNHX1sgd",
+             "Authorization": "Bearer ya29.c.Kl66B8UJXFvuoORvd5WMACcSv5gvVaKnwrgkRkk65g9MlgXf9dPcqzK--xG08_p1OpvaY5Rd4Zml8ATyscdHSxvRsh_aKFj2-cySpWctD7WnHwRDvnjCKeQniUJ7s7vh",
              "Content-Type": "application/json"
            },
            method: "POST",
@@ -61,32 +61,32 @@ export default class SettingsScreen extends Component {
          }
        );
        let responseJson = await response.json();
-       console.log(responseJson)
-       let arr = responseJson.name.split('/');
-       console.log(arr)
-       console.log(arr[arr.length - 1])
+       console.log(responseJson.name)
+       // let arr = responseJson.name.split('/');
+       // console.log(arr)
+       // console.log(arr[arr.length - 1])
        this.setState({
          googleResponse: responseJson,
          uploading: false
        });
-
+       console.log("https://vision.googleapis.com/v1/projects/" + responseJson.name);
        let response2 = await fetch(
-         `https://vision.googleapis.com/v1/operations/${arr[arr.length - 1]}`,
+         "https://vision.googleapis.com/v1/projects/thermal-talon-215015/locations/us/operations/2835c48e7be3cba4",
          {
            headers: {
              Accept: "application/json",
-             "Authorization": "Bearer ya29.c.Kl66B-gzFyqvxP7D_jYaxLgpdh-4Hp5boL6hriGRWHvgdxK0ZSKPwo5NMxzHLfMsGqSver6z4Hk2yrzvPfje-r6PNXeqy08XVrXtWJaOShBCDtiex4BDga_SmNHX1sgd",
+             "Authorization": "Bearer ya29.c.Kl66B8UJXFvuoORvd5WMACcSv5gvVaKnwrgkRkk65g9MlgXf9dPcqzK--xG08_p1OpvaY5Rd4Zml8ATyscdHSxvRsh_aKFj2-cySpWctD7WnHwRDvnjCKeQniUJ7s7vh",
              "Content-Type": "application/json"
            },
            method: "GET",
          }
        )
-       .then((res) => {
-         //console.log(res.json())
-       })
        .catch((err) => {
          //console.log(err)
        })
+
+    let responseJson2 = await response2.json();
+    console.log(responseJson2);
       } catch (error) {
         console.log(error);
       }
