@@ -1,0 +1,38 @@
+{
+    "b-count": 13,
+    "behavioural": ["Tell me a little about yourself.",
+        "What are your biggest weaknesses?",
+        "What are your biggest strengths?",
+        "Where do you see yourself in five years?",
+        "Why do you want this job?",
+        "What can we expect from you in your first three months?",
+        "Tell me about a time when you handled a challenging situation.",
+        "Tell me about a time you had to be very strategic in order to meet all your top priorities.",
+        "Tell me about a time you failed. How did you deal with the situation?",
+        "Tell me about a time you set a goal for yourself. How did you go about ensuring that you would meet your objective?",
+        "Tell me about a successful presentation you gave and why you think it was a hit.",
+        "Give me an example of a time you were able to be creative with your work. What was exciting or difficult about it?",
+        "What do you do if you disagree with someone at work?"
+    ],
+    "s-count": 13,
+    "standalone_technical": ["Name a SDLC methodology and explain the steps in detail.",
+        "What is a class? What is a superclass?",
+        "Explain the differences between a queue and a stack.",
+        "Explain the differences between a method and a constructor.",
+        "Explain some differences between imperative programming and functional programming.",
+        "How does function/method overloading?",
+        "Describe a project in the past year or so that you were very passionate about.",
+        "What do you think are the most important aspects of a successful development team?",
+        "How do you keep your technical skills relevant over time?",
+        "Explain the 'Divide and Conquer' methodology.",
+        "Explain breadth-first search.",
+        "Explain the different types of acces modifiers.",
+        "Explain the differences of a compiler and an interpreter."
+    ], 
+    "g-count": 4,
+    "generated": ["How can your skills in _ benefit our company project?",
+        "Tell us about your previous experiences, both academic and professional, on _.",
+        "How familiar are you with _?",
+        "Describe a particular challenge you had when working with _. How did you overcome it?"
+    ]
+}
