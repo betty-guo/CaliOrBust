@@ -54,6 +54,7 @@ export default class SettingsScreen extends Component {
          {
            headers: {
              Accept: "application/json",
+             "Authorization": "Bearer ya29.c.Kl66B-gzFyqvxP7D_jYaxLgpdh-4Hp5boL6hriGRWHvgdxK0ZSKPwo5NMxzHLfMsGqSver6z4Hk2yrzvPfje-r6PNXeqy08XVrXtWJaOShBCDtiex4BDga_SmNHX1sgd"
              "Content-Type": "application/json"
            },
            method: "POST",
